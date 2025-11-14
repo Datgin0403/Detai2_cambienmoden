@@ -1,0 +1,17 @@
+light:
+  - name: "Đèn Phòng Khách"
+    unique_id: den_phong_khach_01
+    command_topic: "den/phong_khach/set"
+    state_topic: "den/phong_khach/state"
+    payload_on: "ON"
+    payload_off: "OFF"
+    qos: 1
+    retain: true
+
+binary_sensor:
+  - name: "Chuyển động Phòng Khách"
+    unique_id: chuyen_dong_phong_khach_01
+    state_topic: "den/phong_khach/pir/state"
+    payload_on: "ON"                      
+    payload_off: "OFF"                    
+    device_class: motion                      

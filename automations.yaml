@@ -1,0 +1,22 @@
+- id: '1678886500001'
+  alias: 'BAT den khi co chuyen dong Phong Khach'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.chuyen_dong_phong_khach
+      to: 'on'
+  action:
+    - service: light.turn_on
+      target:
+        entity_id: light.den_phong_khach
+
+- id: '1678886500002'
+  alias: 'TAT den khi khong co chuyen dong'
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.chuyen_dong_phong_khach
+      to: 'off'
+      for: '00:01:00'
+  action:
+    - service: light.turn_off
+      target:
+        entity_id: light.den_phong_khach
